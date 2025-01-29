@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="border p-1">
+        <div class="row">
+            <div class="col-4">
+                <div>Bjp <span id="BJPID"></span></div>
+            </div>
+
+            <div class="col-4">
+                <div class="col-4">
+                    <div>Aam Aadmi party <span id="AAPID"></span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="col-4">
+                    <div>Congress <span id="CONGRESSID"></span></div>
+                </div>
+            </div>
+            <div> Bjp <span> https://localhost:44378/Home/VoteAction?type=Bjp </span> </div>
+            <div>Aap <span> https://localhost:44378/Home/VoteAction?type=Aap</span></div>
+            <div>Congress <span> https://localhost:44378/Home/VoteAction?type=Congress </span></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-4">TotalView:-</div>
+            <div class="col-4 text-primary" id="TotalView"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">TotalUser:-</div>
+            <div class="col-4 text-primary" id="TotalUser"></div>
+        </div>
+
+        @* disconnectedUser *@
+        <div class="row">
+            <div class="col-4" >Total Disconnected User:-</div>
+            <div class="col-4 text-primary" id="TotalDisconnectedUser"></div>
+        </div>
+
+        <a href="#" id="" onclick="ChatMe(this)" class="row btn btn-primary" role="button">
+            <span class="col-4" id="ConnectedUserHubId"></span>
+            <div class="col-4" id="user"></div>
+            <div class="col-4" id="message"></div>
+        </a>
+        @* //current user *@
+        <span class="col-4" id="ConId"></span>
+    </div>
+        <span class="col-4" id="messagesList"></span>
+</div>
+
+
+<form class="form-group" method="post" >
+    <input class="form-control formId" type="text" id="FormId" />
+    <label for="message" class="form-label">Enter your message with your username</label>
+    <input class="form-control mb-2" id="UserName" type="text" /> 
+    <input class="form-control" id="UserMessage" type="text" />
+    <button type="button" onclick="SubmitForm()">Submit</button>
+    <button type="button" onclick="SubmitFormEveryone()">Submit All</button>
+    <button type="button" onclick="SubmitFormOne()">Submit EveryOne</button>
+</form>
+
+<input class="form-control " type="text" id="FirstUserId" />
+<input class="form-control " type="text" id="SecondUserId" />
+<input class="form-control " type="text" id="MessageForBoth" />
+<button type="button" onclick="IdsBtn()" >submit</button>
+
+<div class="row">
+    <div class="col-4" id="SpecialMessage"></div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="~/js/signalr.js"></script>
+<script src="~/js/userchat.js"></script>
+@* <script src="~/js/votefile.js"></script> *@
